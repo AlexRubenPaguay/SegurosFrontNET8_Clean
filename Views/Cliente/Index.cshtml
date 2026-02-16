@@ -1,0 +1,67 @@
+﻿@model IEnumerable<SegurosFrontNET8_Clean.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="text-center">Administración de Clientes</h2>
+
+<p>
+    <a asp-action="Create">Nuevo Cliente</a>
+</p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                
+            </th>
+            <th>
+                ID
+            </th>
+            <th>
+                CÉDULA
+            </th>
+            <th>
+                NOMBRES
+            </th>
+            <th>
+                TELÉFONO
+            </th>
+            <th>
+                EDAD
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink("Asignar Seguro", "Create","Seguro", new { cedula = item.Cedula })                    
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdCliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cedula)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefono)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Edad)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { cedula = item.Cedula }) |
+                    @Html.ActionLink("Detalles", "Details", new { cedula = item.Cedula }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { cedula = item.Cedula })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

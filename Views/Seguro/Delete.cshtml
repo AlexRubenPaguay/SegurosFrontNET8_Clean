@@ -1,0 +1,57 @@
+﻿@model SegurosFrontNET8_Clean.Models.Seguro
+
+@{
+    ViewData["Title"] = "Eliminar Seguro";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h3 class="mb-0"><i class="bi bi-exclamation-triangle"></i> Eliminar Seguro</h3>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning">
+                        <h5 class="alert-heading">¿Está seguro que desea eliminar este seguro?</h5>
+                        <p class="mb-0">Esta acción no se puede deshacer.</p>
+                    </div>
+
+                    <dl class="row">
+                        <dt class="col-sm-4">ID del Seguro:</dt>
+                        <dd class="col-sm-8">@Model.IdSeguro</dd>
+
+                        <dt class="col-sm-4">Código:</dt>
+                        <dd class="col-sm-8">@Model.Codigo</dd>
+
+                        <dt class="col-sm-4">Nombre:</dt>
+                        <dd class="col-sm-8">@Model.Nombre</dd>
+
+                        <dt class="col-sm-4">Suma Asegurada:</dt>
+                        <dd class="col-sm-8">@Model.Suma.ToString("C2")</dd>
+
+                        <dt class="col-sm-4">Prima:</dt>
+                        <dd class="col-sm-8">@Model.Prima.ToString("C2")</dd>
+
+                        <dt class="col-sm-4">ID Cliente:</dt>
+                        <dd class="col-sm-8">@(Model.IdCliente.ToString() ?? "Sin asignar")</dd>
+                    </dl>
+
+                    <hr />
+
+                    <form asp-action="Delete" method="post">                       
+                        <input type="hidden" name="IdSeguro" value="@Model.IdSeguro" />
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a asp-action="Index" class="btn btn-outline-secondary me-md-2">
+                                <i class="bi bi-arrow-left"></i> Cancelar
+                            </a>
+                            <button type="submit" class="btn btn-danger">
+                                <i class="bi bi-trash"></i> Confirmar Eliminación
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

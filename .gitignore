@@ -1,0 +1,201 @@
+## Ignorar archivos generados por el IDE ##
+.vs/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.pidb
+*.ide/
+*.dll.meta
+*.dll
+*.pdb
+
+## Archivos de compilación ##
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+
+# Archivos de salida de publicación
+publish/
+*.pubxml
+
+# Archivos de resultado de pruebas
+TestResults/
+*.trx
+*.coverage
+.coverage
+*.coveragexml
+
+## Archivos de usuario ##
+*.userprefs
+
+## Archivos del sistema operativo ##
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+[Tt]humbs.db
+
+## Archivos de logs y caché ##
+*.log
+*.cache
+*.pid
+*.seed
+*.pid.lock
+*.tgz
+*.gz
+
+## Archivos de configuración local ##
+appsettings.Development.json
+appsettings.Local.json
+appsettings.Staging.json
+appsettings.Production.json
+
+# Archivos de secretos locales (NUNCA subir secretos!)
+secrets.json
+*.secret.config
+appsettings.*.json
+
+## Archivos de Docker ##
+docker-compose.override.yml
+Dockerfile.local
+
+## Paquetes NuGet ##
+packages/
+.nuget/
+NuGet.exe
+*.nupkg
+
+# Archivo de bloqueo de restaurar paquetes
+packages.lock.json
+
+# Archivos de Roslyn
+*.csprojAssemblyReference.cache
+
+## Archivos de migraciones de EF Core ##
+# Mantener solo el código de migraciones, no los archivos compilados
+Migrations/*.Designer.cs
+Migrations/*.resx
+
+## Archivos de frontend (si tienes) ##
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+dist/
+wwwroot/lib/
+bower_components/
+
+## Archivos de cobertura de código ##
+coverage/
+*.coverage
+*.coveragexml
+
+## Archivos de profiling ##
+*.diagsession
+*.aps
+
+## Archivos de SQLite (si usas) ##
+*.db
+*.sqlite
+*.sqlite3
+
+## Archivos de mensajes de salida ##
+msbuild.err
+msbuild.wrn
+
+## Archivos de T4 templates ##
+*.tt
+*.ttinclude
+
+## Archivos de extensión ReSharper ##
+_ReSharper.*
+*.ReSharper
+*.ReSharper.user
+
+## Archivos de Rider (JetBrains) ##
+*.sln.iml
+
+## Archivos de caché de Rider ##
+.idea/
+*.sln.iml
+
+## Archivos de caché de Visual Studio Code ##
+.history/
+
+## Archivos de caché de dotnet tools ##
+.dotnet/
+
+## Archivos generados por dotnet-ef ##
+# Si usas Entity Framework Core Tools
+efpt.config.json
+
+## Archivos de sonar-scanner ##
+.sonarqube/
+.scannerwork/
+
+## Archivos de Azurite (emulador Azure Storage) ##
+__azurite_db*__.json
+
+## Archivos de Swagger (si generas) ##
+swagger-ui/
+swagger.json
+
+## Archivos de backup ##
+*.bak
+*.tmp
+*.temp
+
+## Archivos de certificados locales ##
+*.pfx
+*.p12
+*.cer
+*.crt
+*.key
+
+## Archivos de Azure Functions (si aplica) ##
+.local.settings.json
+
+## Archivos de aplicaciones cliente (Blazor, Angular, React) ##
+ClientApp/node_modules/
+ClientApp/dist/
+ClientApp/.angular/
+ClientApp/.next/
+ClientApp/.nuxt/
+
+## Archivos de TypeScript ##
+*.tsbuildinfo
+
+## Archivos de configuración específica del proyecto ##
+# Si usas herramientas específicas, agregar aquí
+
+# Ejemplo para proyectos con React/TypeScript
+**/wwwroot/js/*.js
+**/wwwroot/js/*.js.map
+
+# Ejemplo para proyectos con Vite
+*.vite/
+
+## IMPORTANTE: Mantener estos archivos ##
+# !appsettings.json  # El archivo base SÍ debe subirse (sin valores reales)
+# !Program.cs
+# !*.csproj
+# !Startup.cs (si usas .NET Core 5 o inferior)
+# !Controllers/
+# !Models/
+# !Services/
+# !Repositories/
+# !Migrations/*.cs (solo los archivos .cs de migraciones)

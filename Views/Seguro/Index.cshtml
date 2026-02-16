@@ -1,0 +1,102 @@
+﻿@model IEnumerable<SegurosFrontNET8_Clean.Models.ClienteSeguroViewModel>
+
+@{
+
+    ViewData["Title"] = "Index";
+    var DatoBusqueda = Context.Request.Query["Dato"].ToString();
+}
+<h2 class="text-center">Asegurados</h2>
+<form asp-action="Index" asp-controller="Seguro" method="get" class="w-100 max-w-2xl mx-auto">
+    <div class="d-flex align-items-center mx-auto w-100">
+        <select name="buscarPor" class="form-control mr-2" style="max-width: 150px;">
+            <option value="">Escoja una opción</option>
+            <option value="codigo" selected="@(ViewBag.CriterioBusqueda == "codigo")">Código</option>
+            <option value="cedula" selected="@(ViewBag.CriterioBusqueda == "cedula")">Cédula</option>
+        </select>
+        <label for="buscarInput" class="visually-hidden">Buscar seguro</label>
+        <div class="position-relative flex-grow-1">
+            <div class="position-absolute top-50 start-0 translate-middle-y ps-3">
+                <svg class="text-secondary" width="16" height="16" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                     fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                </svg>
+            </div>
+            <input type="text" id="buscarInput"
+                   name="Dato"
+                   class="form-control rounded-3 border border-secondary-subtle ps-5 py-2.5"
+                   placeholder="Buscar seguro: Código de Seguro o nombre de cliente..."
+                   value="@DatoBusqueda" />
+        </div>
+        <button type="submit" class="btn btn-outline-primary ms-2 px-4 py-2.5 rounded-3">
+            Buscar
+        </button>
+    </div>
+</form>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                CÓDIGO
+            </th>
+            <th>
+                NOMBRE
+            </th>
+            <th>
+                SUMA ASEGURADA
+            </th>
+            <th>
+                PRIMA
+            </th>
+            <th>
+                ID CLIENTE
+            </th>
+            <th>
+                CÉDULA
+            </th>
+            <th>
+                NOMBRE
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seguro.IdSeguro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seguro.Codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seguro.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seguro.Suma)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seguro.Prima)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cliente.IdCliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cliente.Cedula)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cliente.Nombre)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { IdSeguro = item.Seguro.IdSeguro }) |
+                    @Html.ActionLink("Detalles", "Details", new { IdSeguro = item.Seguro.IdSeguro }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { IdSeguro = item.Seguro.IdSeguro })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

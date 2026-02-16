@@ -1,0 +1,73 @@
+﻿@model ClienteSeguroViewModel
+
+
+@{
+    ViewData["Title"] = "Detalles del Seguro";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow">
+                <div class="card-header bg-info text-white">
+                    <h3 class="mb-0"><i class="bi bi-info-circle"></i> Detalles del Seguro</h3>
+                </div>
+                <h5> DATOS DE CLIENTE</h5>
+                <hr />
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4">ID :</dt>
+                        <dd class="col-sm-8">@Model.Cliente.IdCliente</dd>
+
+                        <dt class="col-sm-4">NOMBRE:</dt>
+                        <dd class="col-sm-8">@Model.Cliente.Nombre</dd>
+
+                        <dt class="col-sm-4">CEDULA:</dt>
+                        <dd class="col-sm-8">
+                            <span class="badge bg-info">@Model.Cliente.Cedula</span>
+                        </dd>
+                        <dt class="col-sm-4">EDAD:</dt>
+                        <dd class="col-sm-8">@Model.Cliente.Edad</dd>
+                        <dt class="col-sm-4">TELÉFONO:</dt>
+                        <dd class="col-sm-8">@Model.Cliente.Telefono</dd>
+                        
+                    </dl>
+                   
+                </div>
+                <h5> DATOS DE SEGURO</h5>
+                <hr />
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4">ID del Seguro:</dt>
+                        <dd class="col-sm-8">@Model.Seguro.IdSeguro</dd>
+
+                        <dt class="col-sm-4">Código:</dt>
+                        <dd class="col-sm-8">
+                            <span class="badge bg-info">@Model.Seguro.Codigo</span>
+                        </dd>
+
+                        <dt class="col-sm-4">Nombre:</dt>
+                        <dd class="col-sm-8">@Model.Seguro.Nombre</dd>
+
+                        <dt class="col-sm-4">Suma Asegurada:</dt>
+                        <dd class="col-sm-8">@Model.Seguro.Suma.ToString("C2")</dd>
+
+                        <dt class="col-sm-4">Prima:</dt>
+                        <dd class="col-sm-8">@Model.Seguro.Prima.ToString("C2")</dd>                      
+                    </dl>
+
+                    <hr />
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a asp-action="Edit" asp-route-id="@Model.Seguro.IdSeguro" class="btn btn-warning me-md-2">
+                            <i class="bi bi-pencil"></i> Editar
+                        </a>
+                        <a asp-action="Index" class="btn btn-outline-secondary">
+                            <i class="bi bi-arrow-left"></i> Volver a la lista
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

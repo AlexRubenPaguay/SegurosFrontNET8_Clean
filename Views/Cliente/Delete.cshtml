@@ -1,0 +1,51 @@
+﻿@model SegurosFrontNET8_Clean.Models.Cliente
+
+@{
+    ViewData["Title"] = "Eliminar Cliente";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h3 class="mb-0"><i class="bi bi-exclamation-triangle"></i> Eliminar Cliente</h3>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning">
+                        <h5 class="alert-heading">¿Está seguro que desea eliminar este cliente?</h5>
+                        <p class="mb-0">Esta acción no se puede deshacer.</p>
+                    </div>
+
+                    <dl class="row">
+                        <dt class="col-sm-3">Cédula:</dt>
+                        <dd class="col-sm-9">@Model.Cedula</dd>
+
+                        <dt class="col-sm-3">Nombre:</dt>
+                        <dd class="col-sm-9">@Model.Nombre</dd>
+
+                        <dt class="col-sm-3">Teléfono:</dt>
+                        <dd class="col-sm-9">@Model.Telefono</dd>
+
+                        <dt class="col-sm-3">Edad:</dt>
+                        <dd class="col-sm-9">@Model.Edad años</dd>
+                    </dl>
+
+                    <hr />
+
+                    <form asp-action="Delete" method="post">                        
+                        <input type="hidden" name="cedula" value="@Model.Cedula" />
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a asp-action="Index" class="btn btn-outline-secondary me-md-2">
+                                <i class="bi bi-arrow-left"></i> Cancelar
+                            </a>
+                            <button type="submit" class="btn btn-danger">
+                                <i class="bi bi-trash"></i> Confirmar Eliminación
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
