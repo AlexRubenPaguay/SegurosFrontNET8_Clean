@@ -6,8 +6,9 @@
 https://github.com/AlexRubenPaguay/SegurosNET8_Clean
 
 ## DESARROLLO 
-ASP.NET(8) CORE MVC
-VISUAL ESTUDIO 2022
+- ASP.NET(8) CORE MVC
+- VISUAL ESTUDIO 2022
+- BOOTSTRAP 5
 
 ## ALGUNAS IMAGENES
 <img width="485" height="937" alt="image" src="https://github.com/user-attachments/assets/f78e5817-9e0f-4761-ba76-5120adf82908" />
@@ -24,6 +25,7 @@ VISUAL ESTUDIO 2022
 <img width="1798" height="873" alt="image" src="https://github.com/user-attachments/assets/61fbaa20-27d7-4d15-8c21-cd3660eed434" />
 <img width="1887" height="880" alt="image" src="https://github.com/user-attachments/assets/4041d4cc-6de2-4261-a4d5-0a42df719479" />
 <img width="1843" height="875" alt="image" src="https://github.com/user-attachments/assets/35ae720f-200a-4eac-bb03-7b3f9f028699" />
+
 
 
 
