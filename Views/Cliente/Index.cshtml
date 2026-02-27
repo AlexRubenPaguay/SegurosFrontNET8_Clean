@@ -15,10 +15,7 @@
         <tr>
             <th>
                 
-            </th>
-            <th>
-                ID
-            </th>
+            </th>            
             <th>
                 CÉDULA
             </th>
@@ -40,10 +37,7 @@
             <tr>
                 <td>
                     @Html.ActionLink("Asignar Seguro", "Create","Seguro", new { cedula = item.Cedula })                    
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IdCliente)
-                </td>
+                </td>                
                 <td>
                     @Html.DisplayFor(modelItem => item.Cedula)
                 </td>

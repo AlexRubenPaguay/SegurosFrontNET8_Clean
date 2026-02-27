@@ -35,10 +35,7 @@
 </form>
 <table class="table table-hover">
     <thead>
-        <tr>
-            <th>
-                ID
-            </th>
+        <tr>            
             <th>
                 CÓDIGO
             </th>
@@ -50,10 +47,7 @@
             </th>
             <th>
                 PRIMA
-            </th>
-            <th>
-                ID CLIENTE
-            </th>
+            </th>            
             <th>
                 CÉDULA
             </th>
@@ -66,10 +60,7 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Seguro.IdSeguro)
-                </td>
+            <tr>                
                 <td>
                     @Html.DisplayFor(modelItem => item.Seguro.Codigo)
                 </td>
@@ -81,10 +72,7 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Seguro.Prima)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cliente.IdCliente)
-                </td>
+                </td>                
                 <td>
                     @Html.DisplayFor(modelItem => item.Cliente.Cedula)
                 </td>
